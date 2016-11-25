@@ -61,8 +61,8 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         ImageSendMessage(
-    original_content_url='https://example.com/original.jpg',
-    preview_image_url='https://example.com/preview.jpg')
+    original_content_url='http://pbs.twimg.com/profile_images/793221841653411840/gOettUfk_normal.jpg',
+    preview_image_url='http://pbs.twimg.com/profile_images/793221841653411840/gOettUfk_normal.jpg')
 )
 
 
