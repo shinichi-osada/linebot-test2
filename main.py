@@ -14,7 +14,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,TemplateSendMessage,ButtonsTemplate,ConfirmTemplate,
+    MessageEvent, TextMessage, TextSendMessage,TemplateSendMessage,ButtonsTemplate,ConfirmTemplate,ImageSendMessage,
 )
 
 import config
@@ -60,7 +60,7 @@ def worker():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text="魔法少女" , actions="http://yahoo.co.jp" ))
+        TextSendMessage(preview_image_url="http://pbs.twimg.com/profile_images/793221841653411840/gOettUfk_normal.jpg"))
 
 
 if __name__ == "__main__":
