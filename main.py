@@ -14,7 +14,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,TemplateSendMessage,ButtonsTemplate,
+    MessageEvent, TextMessage, TextSendMessage,TemplateSendMessage,ButtonsTemplate,ConfirmTemplate,
 )
 
 import config
@@ -60,7 +60,7 @@ def worker():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        ButtonsTemplate(text='tt-僕と契約して、魔法少女になってよ！' ))
+        ConfirmTemplate(text='tt-僕と契約して、魔法少女になってよ！' , actions="http://yahoo.co.jp" ))
 
 
 if __name__ == "__main__":
