@@ -66,7 +66,7 @@ def handle_message(event):
                     "text": payload_text
                 }
             ]
-
+    )
 
 if __name__ == "__main__":
     app.run()
