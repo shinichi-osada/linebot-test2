@@ -60,7 +60,11 @@ def worker():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text="魔法少女"))
+        {
+    "type": "text",
+    "text": "Hello, world"
+}
+    )
 
 
 if __name__ == "__main__":
