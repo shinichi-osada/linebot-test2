@@ -60,7 +60,7 @@ def worker():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text='ttt-僕と契約して、魔法少女になってよ！' + "aaa"))
+        TextSendMessage(text='ttt-僕と契約して、魔法少女になってよ！' + reply_message))
 
 
 if __name__ == "__main__":
