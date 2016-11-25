@@ -60,7 +60,7 @@ def worker():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        ConfirmTemplate("text"="魔法少女" , "actions"="http://yahoo.co.jp" ))
+        ConfirmTemplate(text="魔法少女" , actions="http://yahoo.co.jp" ))
 
 
 if __name__ == "__main__":
