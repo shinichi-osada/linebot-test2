@@ -60,7 +60,7 @@ def worker():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        ImageSendMessage(preview_image_url="http://pbs.twimg.com/profile_images/793221841653411840/gOettUfk_normal.jpg"))
+        TextSendMessage(text="魔法少女" ))
 
 
 if __name__ == "__main__":
