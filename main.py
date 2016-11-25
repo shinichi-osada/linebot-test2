@@ -62,7 +62,7 @@ def handle_message(event):
         event.reply_token,
         ImageSendMessage(
     original_content_url='https://example.com/original.jpg',
-    preview_image_url='https://example.com/preview.jpg'
+    preview_image_url='https://example.com/preview.jpg')
 )
 
 
