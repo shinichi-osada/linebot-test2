@@ -60,11 +60,7 @@ def worker():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        ConfirmTemplate(
-type = 'confirm'
-        text = "text"
-        actions = "_get_actions(actions)"
-)
+        ConfirmTemplate( type = "confirm" , text = "text" , actions = "_get_actions(actions)" )
     )
 
 if __name__ == "__main__":
