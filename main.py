@@ -60,7 +60,7 @@ def worker():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text="sss")+(text="aaa")
+        TextSendMessage(text="sss",text="aaa")
     )
 
 if __name__ == "__main__":
