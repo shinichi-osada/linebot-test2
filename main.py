@@ -68,7 +68,6 @@ def handle_message(event):
                 actions=[
             URITemplateAction(
                 label='YES',
-                text='YES yo can',
                 uri='http://yahoo.co.jp'
             ),
             MessageTemplateAction(
