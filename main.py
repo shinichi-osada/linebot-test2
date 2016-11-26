@@ -14,7 +14,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,TemplateSendMessage,ButtonsTemplate,ConfirmTemplate,ConfirmTemplate,
+    MessageEvent, TextMessage, TextSendMessage,TemplateSendMessage,ButtonsTemplate,ConfirmTemplate,ConfirmTemplate,StickerSendMessage,
 )
 
 import config
@@ -60,7 +60,10 @@ def worker():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text="sss" + "aaa")
+        StickerSendMessage(
+    package_id='1',
+    sticker_id='1'
+)
     )
 
 if __name__ == "__main__":
