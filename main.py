@@ -62,14 +62,14 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         TemplateSendMessage(
-            alt_text='Confirm template',
+            alt_text='どうしますか？',
             template=ConfirmTemplate(
-                text='Are you sure?',
+                text='キーワードでも探せます。',
                 actions=[
             PostbackTemplateAction(
-                label='postback',
-                text='postback text',
-                data='action=buy&itemid=1'
+                label='YES',
+                text='YES yo can',
+                data='http://yahoo.co.jp'
             ),
             MessageTemplateAction(
                 label='message',
