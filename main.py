@@ -66,10 +66,10 @@ def handle_message(event):
             template=ConfirmTemplate(
                 text='キーワードでも探せます。',
                 actions=[
-            PostbackTemplateAction(
+            URITemplateAction(
                 label='YES',
                 text='YES yo can',
-                data='http://yahoo.co.jp'
+                uri='http://yahoo.co.jp'
             ),
             MessageTemplateAction(
                 label='message',
