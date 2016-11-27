@@ -78,6 +78,19 @@ def callback():
     body = request.get_data(as_text=True)
     app.logger.info("Request body: " + body)
 
+    # Task Queue Add
+    taskqueue.add(url='/worker',
+                  params={'body': body,
+                          'signature': signature},
+                  method="POST")
+
+    return 'OK'
+
+@app.route("/worker", methods=['POST'])
+def worker():
+    body = request.form.get('body')
+    signature = request.form.get('signature')
+
     # handle webhook body
     try:
         handler.handle(body, signature)
