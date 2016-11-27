@@ -77,10 +77,6 @@ def handle_message(event):
                 ]
             ))
         )
-    
-f - open('test.txt','w')
-f.write("kon")
-f.close()
 
 if __name__ == "__main__":
     app.run()
