@@ -58,9 +58,6 @@ def worker():
 
 
 @handler.add(MessageEvent, message=TextMessage)
-f = open('text.txt', 'w') 
-f.write("test") 
-f.close() 
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
