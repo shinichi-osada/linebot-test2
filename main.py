@@ -61,7 +61,7 @@ def worker():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        if TextMessage.text == "conf":
+        if TextMessage() == "conf":
         TemplateSendMessage(
             alt_text='どうしますか？',
             template=ConfirmTemplate(
@@ -77,9 +77,7 @@ def handle_message(event):
             )
                 ]
             ))
-        else:
-        TextSendMessage(text='Hello, world')
-    )
+        )
     
 
 if __name__ == "__main__":
