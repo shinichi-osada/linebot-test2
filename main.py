@@ -1,33 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-#  Licensed under the Apache License, Version 2.0 (the "License"); you may
-#  not use this file except in compliance with the License. You may obtain
-#  a copy of the License at
-#
-#       http://www.apache.org/licenses/LICENSE-2.0
-#
-#  Unless required by applicable law or agreed to in writing, software
-#  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-#  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-#  License for the specific language governing permissions and limitations
-#  under the License.
-
-from __future__ import unicode_literals
-
-from gae_http_client import RequestsHttpClient
-
-from google.appengine.api import taskqueue
-
 import config
-import errno
-import os
-import sys
-import tempfile
-from argparse import ArgumentParser
-
+from gae_http_client import RequestsHttpClient
+from google.appengine.api import taskqueue
 from flask import Flask, request, abort
-
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -47,20 +23,8 @@ from linebot.models import (
 
 app = Flask(__name__)
 
-# get channel_secret and channel_access_token from your environment variable
-channel_secret = os.getenv('LINE_CHANNEL_SECRET', None)
-channel_access_token = os.getenv('LINE_CHANNEL_ACCESS_TOKEN', None)
-if channel_secret is None:
-    print('Specify LINE_CHANNEL_SECRET as environment variable.')
-    sys.exit(1)
-if channel_access_token is None:
-    print('Specify LINE_CHANNEL_ACCESS_TOKEN as environment variable.')
-    sys.exit(1)
-
 line_bot_api = LineBotApi(config.CHANNEL_ACCESS_TOKEN, http_client=RequestsHttpClient)
 handler = WebhookHandler(config.CHANNEL_SECRET)
-
-static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 
 
 # function for create tmp dir for download content
