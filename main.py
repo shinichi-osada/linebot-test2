@@ -79,7 +79,7 @@ def handle_message(event):
         )
     
 f - open('test.txt','w')
-f.write(message)
+f.write(TextMessage)
 f.close()
 
 if __name__ == "__main__":
