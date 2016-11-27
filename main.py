@@ -61,7 +61,7 @@ def worker():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        if TextMessage() == "conf":
+        if message == "conf":
         TemplateSendMessage(
             alt_text='どうしますか？',
             template=ConfirmTemplate(
