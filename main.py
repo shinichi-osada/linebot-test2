@@ -14,6 +14,7 @@
 
 from __future__ import unicode_literals
 
+import config
 import errno
 import os
 import sys
