@@ -121,7 +121,19 @@ def handle_text_message(event):
             alt_text='Confirm alt text', template=confirm_template)
         line_bot_api.reply_message(event.reply_token, template_message)
     elif text == 'buttons':
-        f = open('r.txt', 'r')
+        buttons_template = ButtonsTemplate(
+            title='My buttons sample', text='Hello, my buttons', actions=[
+                URITemplateAction(
+                    label='Go to line.me', uri='https://line.me'),
+                PostbackTemplateAction(label='ping', data='ping'),
+                PostbackTemplateAction(
+                    label='ping with text', data='ping',
+                    text='ping'),
+                MessageTemplateAction(label='Translate Rice', text='米')
+            ])
+        template_message = TemplateSendMessage(
+            alt_text='Buttons alt text', template=buttons_template)
+        line_bot_api.reply_message(event.reply_token, template_message)
     elif text == 'carousel':
         carousel_template = CarouselTemplate(columns=[
             CarouselColumn(text='hoge1', title='fuga1', actions=[
