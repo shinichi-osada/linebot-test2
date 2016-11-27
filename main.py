@@ -12,6 +12,10 @@
 #  License for the specific language governing permissions and limitations
 #  under the License.
 
+from gae_http_client import RequestsHttpClient
+
+from google.appengine.api import taskqueue
+
 from __future__ import unicode_literals
 
 import config
