@@ -134,7 +134,7 @@ def handle_text_message(event):
         template_message = TemplateSendMessage(
             alt_text='Buttons alt text', template=buttons_template)
         line_bot_api.reply_message(event.reply_token, template_message)
-    elif text == 'カーセル':
+    elif text == 'カルーセル':
         carousel_template = CarouselTemplate(columns=[
             CarouselColumn(text='hoge1', title='fuga1', actions=[
                 URITemplateAction(
@@ -155,7 +155,7 @@ def handle_text_message(event):
         pass
     else:
         line_bot_api.reply_message(
-            event.reply_token, TextSendMessage(text=event.message.text))
+            event.reply_token, TextSendMessage(text=event.message.text) + "ボタン")
 
 
 @handler.add(MessageEvent, message=LocationMessage)
