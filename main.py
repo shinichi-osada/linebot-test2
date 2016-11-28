@@ -82,7 +82,7 @@ def worker():
 def handle_text_message(event):
     text = event.message.text
 
-    if text == 'profile':
+    if text == '名前':
         if isinstance(event.source, SourceUser):
             profile = line_bot_api.get_profile(event.source.user_id)
             line_bot_api.reply_message(
@@ -112,7 +112,7 @@ def handle_text_message(event):
             line_bot_api.reply_message(
                 event.reply_token,
                 TextMessage(text="Bot can't leave from 1:1 chat"))
-    elif text == 'confirm':
+    elif text == 'コンフォーム':
         confirm_template = ConfirmTemplate(text='Do it?', actions=[
             MessageTemplateAction(label='Yes', text='Yes!'),
             MessageTemplateAction(label='No', text='No!'),
@@ -120,7 +120,7 @@ def handle_text_message(event):
         template_message = TemplateSendMessage(
             alt_text='Confirm alt text', template=confirm_template)
         line_bot_api.reply_message(event.reply_token, template_message)
-    elif text == 'buttons':
+    elif text == 'ボタン':
         buttons_template = ButtonsTemplate(
             title='My buttons sample', text='Hello, my buttons', actions=[
                 URITemplateAction(
@@ -134,7 +134,7 @@ def handle_text_message(event):
         template_message = TemplateSendMessage(
             alt_text='Buttons alt text', template=buttons_template)
         line_bot_api.reply_message(event.reply_token, template_message)
-    elif text == 'carousel':
+    elif text == 'カーセル':
         carousel_template = CarouselTemplate(columns=[
             CarouselColumn(text='hoge1', title='fuga1', actions=[
                 URITemplateAction(
