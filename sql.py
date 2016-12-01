@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*- 
 
+import os
+
 import MySQLdb
+import webapp2
 
 connector = MySQLdb.connect(host="localhost", db="sdb", user="root", passwd="32103210", charset="utf8")
 cursor = connector.cursor()
