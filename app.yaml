@@ -14,5 +14,13 @@ handlers:
   script: main.app
   secure: always
 
-beta_settings:
-      cloud_sql_instances: "linebot-test1:us-central1:linebot-test1"
+libraries:
+- name: MySQLdb
+  version: "latest"
+
+# [START env_variables]
+env_variables:
+    CLOUDSQL_CONNECTION_NAME: linebot-test1:us-central1
+    CLOUDSQL_USER: root
+    CLOUDSQL_PASSWORD: 32103210
+# [END env_variables]
