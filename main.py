@@ -155,7 +155,7 @@ def handle_text_message(event):
         pass
     else:
         line_bot_api.reply_message(
-            event.reply_token, TextSendMessage(text=event.message.text + "ワード-ボタン、コンフォーム、カルーセル"))
+            event.reply_token, TextSendMessage(text=event.message.text + "利用ワード-ボタン、コンフォーム、カルーセル"))
 
 
 @handler.add(MessageEvent, message=LocationMessage)
