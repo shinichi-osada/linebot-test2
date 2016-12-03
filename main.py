@@ -11,8 +11,9 @@ from argparse import ArgumentParser
 
 from gae_http_client import RequestsHttpClient
 from google.appengine.api import taskqueue
+from google.cloud import datastore
 
-from flask import Flask, request, abort
+from flask import Flask, request, abort,current_app
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -35,6 +36,17 @@ app = Flask(__name__)
 
 line_bot_api = LineBotApi(config.CHANNEL_ACCESS_TOKEN, http_client=RequestsHttpClient)
 handler = WebhookHandler(config.CHANNEL_SECRET)
+
+
+builtin_list = list
+
+
+def init_app(app):
+    pass
+
+
+def get_client():
+    return datastore.Client(current_app.config['PROJECT_ID'])
 
 
 # function for create tmp dir for download content
@@ -153,6 +165,11 @@ def handle_text_message(event):
         line_bot_api.reply_message(event.reply_token, template_message)
     elif text == 'imagemap':
         pass
+    elif text == book.title:
+        ds = get_client()
+        query = ds.query(kind='Book', order=['title'])
+        line_bot_api.reply_message(
+            event.reply_token, TextSendMessage(text=event.message.text + book.author))        
     else:
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(text=event.message.text + "利用ワード-ボタン、コンフォーム、カルーセル"))
