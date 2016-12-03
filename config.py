@@ -1,4 +1,8 @@
 # coding: utf-8
 
+import os
+DATA_BACKEND = 'datastore'
+PROJECT_ID = 'linebot-test2'
+
 CHANNEL_SECRET = 'ac1e42ccc5475fa9a046b2aacebf8b1e'
 CHANNEL_ACCESS_TOKEN = '+Hw9Kt4O5tamMjG9UNevUqC6Ylu3uDv2V5S7ziFAHfRyB2hLrGhc7dlPt5ZSECIMBWUoDvO44ToPD2UGcP1fceDf5kNx4kKJusJToqtdDKdux36/3RNNxiFIbCDCvSvMyqI+xtHe896V6sNw5Y2IWQdB04t89/1O/w1cDnyilFU='
