@@ -1,5 +1,5 @@
+project: linebot-test3
 runtime: python
-env: flex
 entrypoint: gunicorn -b :$PORT main:app
 
 runtime_config:
